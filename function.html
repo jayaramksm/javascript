@@ -1,0 +1,70 @@
+<html>
+    <body>
+        
+        <script>
+        function even(n){
+            for(var i=n;i>=0;i--){
+            if(i%2==0){
+                console.log(i)
+               
+            }
+        }
+       
+     
+        }
+       even(10)
+      
+       
+        </script>
+        <script>
+            var emp={
+                id:103,
+                sname:"jayaram",
+                grade:"A",
+                salary:15000,
+                position:function (salary){
+                    if(salary>50000)
+                    emp.salary=salary;
+                    console.log("position tl");
+                    if(salary<50000&&salary>20000)
+                        emp.salary=salary;
+                    console.log("position ta");
+                    if(salary<20000)
+                    emp.salary=salary;
+                    console.log("position dev");
+
+
+                }
+               
+            }
+            console.log(emp.position(25000))
+            console.log(emp.salary)
+
+        </script>
+         <script>
+            var emp={
+                id:103,
+                sname:"jayaram",
+                grade:"A",
+                salary:15000,
+                position:function (salary){
+                    if(salary>50000)
+                    emp.salary=salary;
+                    return "position tl"
+                    if(salary<50000&&salary>20000)
+                        emp.salary=salary;
+                        return "position ta"
+                    if(salary<20000)
+                    emp.salary=salary;
+                    return "position dev"
+
+
+                }
+               
+            }
+            console.log(emp.position(30000))
+            console.log(emp.salary)
+
+        </script>
+    </body>
+</html>

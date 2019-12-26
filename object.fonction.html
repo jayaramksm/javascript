@@ -1,0 +1,32 @@
+<html>
+    <body>
+        <script>
+            var emp={
+                id:103,
+                sname:"jayaram",
+                grade:"A",
+                
+                "salary":15000,
+                position:function (salary){
+                    if(salary>50000){
+                    emp.salary=salary;
+                    return emp.salary+"position tl"
+                    }
+                    if(salary<50000 && salary>20000){
+                        emp.salary=salary;
+                        return "position ta"
+                    }
+                    if(salary<20000){
+                    emp.salary=salary;
+                    return "position dev"
+                    }
+
+                }
+               
+            }
+            console.log(emp.position(60000))
+           
+
+        </script>
+    </body>
+</html>

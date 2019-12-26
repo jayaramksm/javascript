@@ -1,0 +1,33 @@
+<html>
+    <body>
+        <div><from bg color="black" width=30%> 
+            <form action="alert.html" name="myform" onsubmit="return validpassword()" method="post">
+            password : <input type="password" name="pass1" placeholder="enter your password">
+            <br>
+                confirm password : <input type="password" name="pass2" placeholder="enter your confirm password">
+                <br>
+                <input type="submit" value="check">
+            </form>
+            <script>
+            function validpassword() {
+                var password=document.myform.pass1.value;
+                var cpassword=document.myform.pass2.value;
+
+                if(password.length<6){
+                    alert(" password must containt charcters");
+                return false;
+                }
+                else if (password == cpassword) {
+                    alert(" password must be same")
+                   return true;
+
+                }
+                else{
+                    alert(" password must be same");
+                }
+                
+            }
+            </script>
+        </div>
+    </body>
+</html>

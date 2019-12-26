@@ -1,0 +1,49 @@
+<html>
+
+<body>
+    
+    <script>
+    var abc=[11,13,10,15,18,23,27,30,31 ];
+    var xyz=[];
+    xyz=abc.map(function(val,index,array)
+    
+    {
+        if( val%2!=0){
+            return xyz.push(array);
+            
+        }
+        
+      
+    }
+   
+    
+    )
+    console.log(xyz); 
+    document.write(xyz)
+   
+    </script>
+     <script>
+        var abc=[{ id:01,sname:"jayaram",m1:36,m2:45,m3:46,grade:"b"} ,
+        {id:01,sname:"jaya",m1:53,m2:22,m3:52,grade:"a"},
+        {id:01,sname:"nani",m1:53,m2:22,m3:52,grade:"b"},
+        {id:01,sname:"naresh",m1:53,m2:22,m3:52,grade:"a"},
+        {id:01,sname:"kranthi",m1:53,m2:22,m3:52,grade:"b"},
+        {id:01,sname:"siva",m1:53,m2:22,m3:52,grade:"b"},
+        {id:01,sname:"manju",m1:53,m2:22,m3:52,grade:"a"},
+        {id:01,sname:"rajesh",m1:53,m2:22,m3:52,grade:"b"},
+        {id:01,sname:"pattabhi",m1:53,m2:22,m3:52,grade:"a"},
+        {id:01,sname:"ram",m1:54,m2:54,m:42,grade:"b"}];
+        
+   
+  
+      var xyz=abc.map(function(val,index)
+      {
+        return {sname:val.sname,grade:val.grade}
+      }
+      )
+    console.log(xyz); 
+    document.write(xyz)
+   </script>
+
+</body>
+</html>

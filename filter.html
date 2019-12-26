@@ -1,0 +1,72 @@
+<html>
+
+<body>
+  
+  <script>
+    var abc=[{ id:01,sname:"jayaram",m1:36,m2:45,m3:46,grade:"b"} ,
+    {id:01,sname:"jayajshydtbdtdtbdtbdgbcbxgbdybxggvgf",m1:53,m2:22,m3:52,grade:"a"},
+    {id:01,sname:"eram",m1:54,m2:54,m:42,grade:"b"}];
+    
+
+
+    var xyz= abc.map(function(val,index)
+  {
+    if(val.sname.length<20)
+    return val.sname+val.grade;
+     
+   
+  }
+ 
+  );
+  console.log(xyz);
+  document.write(xyz)
+  </script>
+    
+    <script>
+      var abc=[{ id:01,sname:"jayaram",m1:36,m2:45,m3:46,grade:"b"} ,
+      {id:01,sname:"jaya",m1:53,m2:22,m3:52,grade:"a"},
+      {id:01,sname:"nani",m1:53,m2:22,m3:52,grade:"b"},
+      {id:01,sname:"naresh",m1:53,m2:22,m3:52,grade:"a"},
+      {id:01,sname:"kranthi",m1:53,m2:22,m3:52,grade:"b"},
+      {id:01,sname:"siva",m1:53,m2:22,m3:52,grade:"b"},
+      {id:01,sname:"manju",m1:53,m2:22,m3:52,grade:"a"},
+      {id:01,sname:"rajesh",m1:53,m2:22,m3:52,grade:"b"},
+      {id:01,sname:"pattabhi",m1:53,m2:22,m3:52,grade:"a"},
+      {id:01,sname:"ram",m1:54,m2:54,m:42,grade:"b"}];
+      var xyz=[];
+ 
+
+     abc.forEach(function(val,index)
+    {
+      
+    
+     xyz[index]=({name:val.sname,grade:val.grade } )   
+     
+    }
+   
+    );
+    document.write(xyz);
+    console.log(xyz)
+    var jaya=abc.filter(function(val,index)
+    {
+      if(val.grade=="a")
+      return true;
+    })
+console.log(jaya);
+document.write(jaya)
+    </script>
+    
+       <script>
+      var abc=[{ id:01,sname:"jayaram",m1:36,m2:45,m3:46,grade:"b"} ,
+      {id:01,sname:"jaya",m1:53,m2:22,m3:52,grade:"a"},
+      {id:01,sname:"eram",m1:54,m2:54,m:42,grade:"b"}];
+      var xyz=[];
+ 
+
+    
+    xyz.push(abc[0].sname+""+abc[1].sname+""+abc[2].sname);
+    console.log(xyz)
+    </script>
+</body>
+</body>
+</html>

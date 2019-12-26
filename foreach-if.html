@@ -1,0 +1,143 @@
+<html>
+    <body>
+        <script>
+        var abc=[11, 21 ,10,26,63,36,33];
+        var xyz=[];
+        abc.forEach(function(val,index)
+        
+        {
+            if( val%2!=0){
+                xyz.push(val );
+            }
+            
+        }
+       
+        
+        )
+        document.write(xyz);
+        
+        </script>
+        <br>
+
+        <script>
+        var jaya=[10,11,23,26,29,42,45];
+        var ram=jaya.map(function(value,index)
+        {
+            return value*index
+        }
+        )
+        document.write(ram)
+        </script>
+<br>
+
+         <script>
+            var priya=[11, 21 ,10,26,63,36,33];
+            var kala=[];
+            priya.forEach(function(val,index)
+            
+            {
+                if( index%2!=0){
+                    kala.push(val +"<br>");
+                }
+                
+            }
+           
+            
+            )
+            document.write(kala);
+            
+            </script>
+<br>
+<script>
+    var abc=[
+        {
+            "sname":"jayaram",
+            "branch":"mechanical",
+            "parsentage":"70%"
+        },
+        {
+            "sname":"siva",
+            "branch":"ece",
+            "parsentage":"70%"
+        },
+
+        {
+            "sname":"raju",
+            "branch":"cse",
+            "parsentage":"70%"
+        }
+        
+    ];
+    abc.forEach( function(item,index)
+{
+    Console.log(item);
+    }
+    );
+
+    </script>
+<br>
+<p>hello jayaram</p>
+<script>
+    var abc=[11,13,10,15,18,23,27,30,31 ];
+    var xyz=[];
+    xyz=abc.map(function(val,index)
+    
+    {
+        if( val%2!=0){
+            return xyz.push(val);
+            
+        }
+        document.write(xyz+"<br>"); 
+      
+    }
+   
+    
+    )
+ 
+    document.write( xyz[5])
+    </script>
+    <p>hii jayaram</p>
+<br>
+
+    <script>
+    var abc=[10];
+    abc.push(20,50,60);
+    document.write(abc)
+    
+    </script>
+
+<br>
+<script>
+    var abc=[10];
+    abc.unshift(20,50,60);
+    document.write(abc)
+    
+    </script>
+
+<br>
+<script>
+    var abc=[20,50,60,10];
+    abc.pop();
+    document.write(abc)
+    
+    </script>
+    <br>
+    <script>
+        var abc=[20,50,60,10];
+        abc.shift();
+        document.write(abc)
+        
+        </script>
+<br>
+<script>
+    var abc=[20,50,60,10];
+    abc.fill(100);
+    document.write(abc)
+    
+    </script>
+
+    
+
+        
+    </body>
+</html>
