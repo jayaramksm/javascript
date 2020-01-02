@@ -1,0 +1,65 @@
+<html>
+    <body>
+        
+        <script>
+            var abc=0;
+      function jay(val){
+       
+          for(var i=2;i<val;i++)
+          {
+              if(val%i==0){
+                 abc++;
+              }
+                   
+          }
+
+          if(abc>=1){
+              console.log("is a prime numberr")
+          }
+          else{
+              console.log("is not a  prime number")
+          }
+      }
+      jay(7);
+    
+      </script>
+      <script>
+          for (var counter = 0; counter <= 50; counter++) { 
+              var notPrime = false; 
+              for (var i = 2; i<= counter; i++) {
+                   if (counter%i===0 && i!==counter) 
+                   { notPrime = true;
+                    }
+                     } 
+                   if (notPrime === false) { 
+                       console.log(counter); } }
+
+      </script>
+      <script>
+      primeNumber(1, 100)
+function primeNumber(from, to){
+      var flag=false;
+      for(i = from; i <= to; i++)
+       {
+           for( j = 2; j < i; j++)
+           {
+               if(i % j == 0)
+               {
+                   flag = false;
+                   break;
+               }
+               else
+               {
+                   flag = true;
+               }
+           }
+           if(flag)
+           {
+               console.log(i);
+           }
+       }
+  }
+      </script>
+      
+    </body>
+</html>
