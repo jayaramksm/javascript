@@ -1,0 +1,69 @@
+<html>
+    <head>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <style>
+        .abc{
+            display: none;
+
+        }
+        </style>
+    </head>
+    <body>
+        <div class="text-center mt-4  p-2">
+        <button class="btn btn-warning p-1 pr-4 pl-4" onclick="hide()">hide</button>
+        <button class="btn btn-warning  p-1 pr-4 pl-4" onclick="show()">show</button>
+    </div>
+        <table id="hide" class=" m-4 mr-4 table table-striped border">
+            <thead>
+                <tr>
+                    <th>s.no</th>
+                    <th>s.name</th>
+                    <th>s.m1</th>
+                    <th>s.m2</th>
+                    <th>s.m3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>jayaram</td>
+                    <td>72</td>
+                    <td>80</td>
+                    <td>75</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>rajesh</td>
+                    <td>65</td>
+                    <td>70</td>
+                    <td>80</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>raju</td>
+                    <td>85</td>
+                    <td>45</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>pavan</td>
+                    <td>52</td>
+                    <td>58</td>
+                    <td>52</td>
+                </tr>
+            </tbody>
+        </table>
+       
+        <script>
+        function hide(){
+            document.getElementById("hide").classList.add("abc")
+        };
+        function show(){
+            document.getElementById("hide").classList.remove("abc")
+        }
+    
+        </script>
+    </body>
+</html>

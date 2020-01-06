@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <style>
+        .abc{
+            display: none;
+
+        }
+        </style>
+    </head>
+    <body>
+        <div class="text-center mt-4  p-2">
+        <button class="btn btn-warning p-1 pr-4 pl-4" onclick="hide()">hide</button>
+        <button class="btn btn-warning  p-1 pr-4 pl-4" onclick="show()">show</button>
+    </div>
+    <div class="card text-center mt-4">
+        <div class="card-header ">vbm info tech</div>
+        <div id="abc" class="card-body bg-secondary vbm" >hide the card</div>
+    </div>
+    <div class="card text-center mt-4">
+        <div class="card-header ">vbm info tech</div>
+        <div id="abc" class="card-body bg-secondary vbm" >hide the card</div>
+    </div>
+    <div class="card text-center mt-4">
+        <div class="card-header ">vbm info tech</div>
+        <div id="abc" class="card-body bg-secondary vbm" >hide the card</div>
+    </div>
+    <script>
+        function hide(){
+            document.getElementById("abc").style="display:none"
+        };
+        function show(){
+            document.getElementById("abc").classList.remove("abc")
+        }
+    
+        </script>
+    
+    
+</html>
