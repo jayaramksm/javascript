@@ -1,10 +1,10 @@
-<html>
+8<html>
     <head>
         <title>jayaram</title>
     </head>
     <body>
         <div class="jaya" id="jay">hello world</div>
-        <h3 class="ram">hii jayaram</h3>
+        <h3 class="ram" id="ram" style="width: 200px;padding: 20px;border: 20px solid gray;">hii jayaram</h3>
         <h3 id="hi">hii jayaram</h3>
         <h3 class="ram">hii jayaram</h3>
         <h2 id="text">hii  hello</h2>
@@ -16,8 +16,10 @@
 
     </body>
     <script>
-   
-          
+        // client width
+      console.log(document.getElementById("ram").clientWidth);
+        // offsetWidth
+      console.log(document.getElementById("ram").offsetWidth)  
         // change the content 
      document.getElementById("jay").innerHTML="world hello-by id";
 
