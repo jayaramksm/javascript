@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    </head>
+    <body>
+
+
+        <div class="card m-5 p-5 bg-warning">
+            <div class="card-header text-center bg-white" onclick="hello()">click me  hide and show</div>
+            <div class="card-body d-none bg-danger" id="jayaram">Some text.. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+        </div>
+
+        <div class="container p-4">
+            <div class="card">
+                <div class="card-header text-center" onclick="one()">click me only  show </div>
+                <div class="card-body d-none" id="card1">Some text.. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            </div>
+            <div class="card">
+                <div class="card-header text-center" onclick="two()" >click me only   show  </div>
+                <div class="card-body d-none" id="card2">Some text.. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            </div>
+            <div class="card">
+                <div class="card-header text-center" onclick="three()">click me only   show  </div>
+                <div class="card-body d-none" id="card3">Some text.. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            </div>
+        </div>
+        <div class="container mt-5 p-5 bg-warning">
+            <div class="card">
+                <div class="card-header text-center" onclick="jaya('car1')">click me only  show </div>
+                <div class="card-body d-none" id="car1">Some text.. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            </div>
+            <div class="card">
+                <div class="card-header text-center" onclick="jaya('car2')" >click me only  show </div>
+                <div class="card-body d-none" id="car2">Some text.. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            </div>
+            <div class="card">
+                <div class="card-header text-center" onclick="jaya('car3')">click me only   show  </div>
+                <div class="card-body d-none" id="car3">Some text.. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            </div>
+        </div>
+        
+        <div class="bg-primary  text-center d-none hii 26  hello" id="ayaram">hhegggd hhshh</div>
+        <script>
+        
+
+              
+            function one(){
+                document.getElementById("card1").classList.remove("d-none")
+              
+            }
+            function two(){
+                document.getElementById("card2").classList.remove("d-none")
+            }
+            function three(){
+                document.getElementById("card3").classList.remove("d-none")
+            }
+        </script>
+        <script>
+           function jaya(xyz){
+               
+                document.getElementById(xyz).classList.remove("d-none")
+            
+            }
+        </script>
+        <script>
+            function hello(){
+             var jay=  document.getElementById("jayaram").classList
+             jay.forEach(function(val,ind){
+                 if(val=="d-none"){
+                     document.getElementById("jayaram").classList.remove("d-none")
+                     
+                 }
+                 else{
+                    document.getElementById("jayaram").classList.add("d-none")
+                 }
+             })
+            }
+             console.log(jay)
+             </script>
+              <script>
+            
+                var jay=  document.getElementById("ayaram").classList
+                jay.forEach(function(val,ind){
+                    if(val=="d-none"){
+                        document.getElementById("ayaram").classList.remove("d-none")
+                        
+                    }
+                    else{
+                       document.getElementById("ayaram").classList.add("d-none")
+                    }
+                })
+                console.log(jay)
+                </script>
+
+    </body>
+</html>
