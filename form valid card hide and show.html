@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    </head>
+    <div id="container" class="container-fluid  p-3 bg-danger text-center text-white d-none">
+        <div class="text-center"> place enter valid input</div>
+        <button id="cancel" onclick="cancel()" class="btn btn-warning">cancel</button>
+    </div>
+    <div class="form-group p-3 bg-warning">
+        <input class="form-control m-3 " id="number" type="text" value=""   placeholder="enter number" autofocus>
+    <input class="form-control m-3" id="pass" type="password" placeholder="enter password" >
+    <button class="btn btn-primary" onclick="number()" >submit</button>
+    <button class="btn btn-primary">cancel</button>
+</div>
+    <div>
+        <div class="container m-5 bg-danger p-4">
+            <div class="card">
+                <div class="card-header text-center" onmouseover="hello('abc')">onmouseove</div>
+                <div class="card-body bg-warning d-none" id="abc">Some text.. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header text-center" onclick="hello('jay')">click me</div>
+                <div class="card-body d-none" id="jay">Some text.. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            </div>
+            <div class="card">
+                <div class="card-header text-center" onmouseout="hello('ram')">onmouseout</div>
+                <div class="card-body d-none" id="ram">Some text.. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            </div>
+            </div>
+
+          
+        <script>
+        function number(){
+            var abc=document.getElementById("number").value
+            if(abc==""){
+                document.getElementById("container").classList.remove("d-none")
+            }else{
+                document.getElementById("container").classList.add("d-none")  
+            };
+            var pas=document.getElementById("pass").value
+            if(pas==""){
+                document.getElementById("container").classList.remove("d-none")
+            }else{
+                document.getElementById("container").classList.add("d-none")  
+            }
+        } ;
+        function cancel(){
+            document.getElementById("container").classList.add("d-none")  
+        }
+       
+    </script>
+
+            <!-- <script>
+                // document.getElementById('ra').setAttribute("class","d-none")
+                 
+                // function hello(jaya){
+                //  var jay=  document.getElementById(jaya).classList
+                //  jay.forEach(function(val,ind){
+                //      if(val=="d-none"){
+                //          document.getElementById(jaya).classList.remove("d-none")
+                         
+                //      }
+                //      else{
+                //         document.getElementById(jaya).classList.add("d-none")
+                //      }
+                //  })
+                // }
+                //  console.log(jay)
+                  </script>
+                 <script> -->
+                     <script>
+                     function hello(perameter){
+                       var xyz=  document.getElementById(perameter).className
+                         if(xyz.indexOf("d-none")>=0){
+                            document.getElementById(perameter).classList.remove("d-none")
+                             }
+                             else{
+                                document.getElementById(perameter).classList.add("d-none")  
+                              }
+                     }
+                 </script>
