@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container  bg-primary w-50 p-2 mt-5">
+
+            <button class="btn  btn-warning" onclick="table()">Show table body</button>
+            <button class="btn float-right  btn-warning" onclick="tablehide()">Hide  table</button>
+            <table class="table mt-2 " id="hide">
+                <thead class="bg-secondary">
+                <tr>
+                    <th>S.no</th>
+                    <th>S.name</th>
+                    <th>G   rade</th>
+                </tr>
+                </thead>
+                <tbody class="bg-danger" id="t-body">
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container bg-secondary mt-5 w-50 p-2"   >
+            <button class="btn  btn-warning" onclick="card()">Show card</button>
+            <button class="btn float-right  btn-warning" onclick="hello()">Hide card</button>
+            <div class="container mt-2" id="headerhide" >
+            <div class="card " m-2 id="card" >
+              
+            </div>
+        </div>
+        </div>
+            <script>
+            function table(){
+                var student=[{id:01,sname:"jayaram",grade:"A"},
+                {id:02,sname:"sai",grade:"B"},
+                {id:03,sname:"ram",grade:"C"} ];
+                var table=[];
+                student.forEach(function(val,ind){
+                    table+="<tr><td>"+val.id+"</td><td>"+val.sname+"</td><td>"+val.grade+"</td></tr>"
+                })
+                document.getElementById("t-body").innerHTML=table
+                document.getElementById("hide").classList.remove("d-none")
+            };
+            function tablehide(){
+                document.getElementById("hide").classList.add("d-none") 
+            };
+
+
+
+            function card(){
+                var card=["jayaram","ram","sai","vbm","info","tech"]
+                var header=""
+                card.forEach(function(val,ind){
+                    header+="<div class='card-header text-center'>"+val+"</div>"
+                })
+            document.getElementById("card").innerHTML=header
+            document.getElementById("headerhide").classList.remove("d-none") 
+            };
+            function hello(){
+                document.getElementById("headerhide").classList.add("d-none") 
+            };
+
+            </script>
+
+       
+
+    </body>
