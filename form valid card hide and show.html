@@ -34,17 +34,13 @@
         <script>
         function number(){
             var abc=document.getElementById("number").value
-            if(abc==""){
+            var pas=document.getElementById("pass").value
+            if(abc=="" || pas==""){
                 document.getElementById("container").classList.remove("d-none")
             }else{
                 document.getElementById("container").classList.add("d-none")  
             };
-            var pas=document.getElementById("pass").value
-            if(pas==""){
-                document.getElementById("container").classList.remove("d-none")
-            }else{
-                document.getElementById("container").classList.add("d-none")  
-            }
+           
         } ;
         function cancel(){
             document.getElementById("container").classList.add("d-none")  
