@@ -1,0 +1,111 @@
+<html>
+    <head>
+
+    </head>
+<body>
+    <script>
+         /* var p=function(){
+           this.id=10;
+           this. name="jay"
+        }
+        var std=new p;
+
+
+        console.log(std.name)
+        var abc=function(){
+            this.id=102;
+            this.name="jayaram";
+            this.branch="mech"
+        }
+        var p1=new abc();
+        var p2=new abc();
+        console.log(p1.id);
+        console.log(p2.id)
+        p1.id=113;
+        console.log(p1.id);
+        console.log(p2.id);
+        
+        var student=function(id,name,grade){
+            this.id=id;
+            this.name=name;
+            this.grade=grade
+        }
+        var std1=new student(101,"jayaram","b");
+        var std2=new student(102,"ram","a");
+        console.log(std1.id+std1.name+std1.grade);*/
+
+        var students=function(id,fname,lname,m1,m2,m3){
+            this.id=id;
+            this.fname=fname;
+            this.lname=lname;
+            this.m1=m1;
+            this.m2=m2;
+            this.m3=m3;
+            this.gettotal=function(){
+               
+               var tot= this.m1+this.m3+this.m2;
+              return tot;
+            };
+            this.grade=function(){
+                var total=this.gettotal()/3;
+
+                if(total>=80){
+                    console.log("A");
+                }
+                if(total>=70&&total<80){
+                    console.log("B"); 
+                }
+                if(total<70&&total>=60){
+                    console.log("C"); 
+                }
+                if(total<60&&total>=35){
+                    
+                    console.log("D"); 
+                }
+                if(total<35){
+                    
+                    console.log("fail"); 
+                }
+            }
+            this.fullname=function(){
+                var fullname=this.fname+this.lname;
+                return fullname;
+            }
+             
+            
+        }
+        var std1=new students(101,"jayaram","kasim",52,55,85);
+      console.log(std1.gettotal());
+      console.log(std1.grade());
+      console.log(std1.fullname());
+        
+      var std2=new students(101,"jaya","ram",96,85,85);
+      console.log(std2.gettotal());
+      console.log(std2.grade());
+      console.log(std2.fullname());
+        
+      var std3=new students(101,"dora","babu",72,60,85);
+      console.log(std3.gettotal());
+      console.log(std3.grade());
+      console.log(std3.fullname());
+        
+      var std4=new students(101,"pattabhi","pennada",85,65,65);
+      console.log(std4.gettotal());
+      console.log(std4.grade());
+      console.log(std4.fullname());
+        
+      var std5=new students(101,"naresh","kasim",354,56,65);
+      console.log(std5.gettotal());
+      console.log(std5.grade());
+      console.log(std5.fullname());
+        
+      var std6=new students(101,"kranthi","kasim",65,45,82);
+      console.log(std6.gettotal());
+      console.log(std6.grade());
+      console.log(std6.fullname());
+        
+
+
+    </script>
+</body>
+    </html>
