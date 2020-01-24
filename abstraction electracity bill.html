@@ -1,0 +1,50 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+        //  var electracitybill=function(sevicenumber,uinumber,name,units) {
+        //     this.sevicenumber=sevicenumber;
+        //     this.number=uinumber;
+        //     this.name=name;
+        //     this.units=units;
+        //  this.totalbill=function(){
+        //      var perunit=2;
+        //      var bill=perunit*units;
+        //      console.log(bill);
+
+        //  };
+        //  };
+        // var ele=new electracitybill(1411003289,9640,"venkateswararao",98)
+        //  ele.totalbill();
+
+        var electracitybill=function(sevicenumber,uinumber,name,units) {
+            this.sevicenumber=sevicenumber;
+            this.number=uinumber;
+            this.name=name;
+            // this.units=units;
+            var units=units;
+         var totalbill=function(){
+             var date=new Date("2020,03,24")
+             var perunit=2;
+             var bill=perunit*units;
+             console.log("number of units : "+units)
+             console.log("bill : "+bill);
+             console.log("last date:"+date)
+
+         }
+         this.details=function(){
+             console.log("sevice number :"+this.sevicenumber)
+             console.log("ui number :"+this.number)
+             console.log("name : "+this.name)
+             totalbill()
+         }
+         };
+        var ele=new electracitybill(1411003289,9640,"venkateswararao",98)
+         ele.details();
+         var ele1=new electracitybill(141100328,964064,"jayaram",120);
+         ele1.units=60;
+         ele1.details();
+      </script>
+            
