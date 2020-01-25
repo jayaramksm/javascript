@@ -1,0 +1,33 @@
+<html>
+    <body>
+        <script>
+        
+        var person=function(name,mnub,age,email){
+            this.name=name;
+            this.mnub=mnub;
+            this.age=age;
+            this.email=email;
+            this.getdetails=function(){
+                console.log("Name is:"+""+this.name+"  "+"Agee is : "+" "+this.age+" "+"Emai is :"+" "+this.email+" "+"Mobile number is : "+this.mnub )
+            }
+                    };
+
+            var employe=function(id,salary,dep,){
+                this.id=id;
+                this.salry=salary;
+                this.dep=dep;
+                this.getemploye=function(){
+                    console.log("Employe id is : "+this.id+" "+"Employe salary is : "+this.salary+" "+"Employe depe is :  "+this.dep)
+                }
+            };
+
+            var emp1=new employe(03,20000,"developer");
+            emp1.__proto__ =new person("jayaram",9640645520,21,"jayramksm@gmail.com");
+            emp1.getemploye();
+            emp1.getdetails();
+            emp1.name="Ram";
+            emp1.getdetails();
+        
+        </script>
+    </body>
+</html>

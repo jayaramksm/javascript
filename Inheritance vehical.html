@@ -1,0 +1,33 @@
+<html>
+    <body>
+        <script>
+        
+        var vehical=function(name,vno,modal,cost,tyres){
+           this.name=name;
+            this.vno=vno;
+            this.modal=modal;
+            this.cost=cost;
+            this.tyres=tyres;
+            this.getdetails=function(){
+                console.log(" Vehical name is:"+""+this.name+"  "+"vehival no is : "+this.vno+" "+"Vehical cost is :"+" "+this.cost+" "+"Vehival modal is : "+this.modal+" " + " Vehical tyres no is"+this.tyres )
+            }
+                    };
+
+            var bus=function(type,cites){
+                this. type=type;
+                this.cites=cites;
+               
+                this.getbus=function(){
+                    console.log("Vehical type  is : "+this.type+" "+"Vehicalno of cites : "+this.cites)
+                }
+            };
+
+            var bus1=new bus("Bus",45);
+            bus1.__proto__ =new vehical("Valvo",656,2015,250000,6);
+            bus1.getbus();
+            bus1.getdetails();
+         
+        
+        </script>
+    </body>
+</html>
