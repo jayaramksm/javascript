@@ -8,7 +8,8 @@
 </head>
 <body>
     <div class="container w-75">
-        <button class="btn btn-primary m-5 ml-5 " onclick="genarate()">Ganerate</button> 
+        <button class="btn btn-primary m-5 ml-5 " onclick="genarate()">Ganerate</button>
+  <button class="btn btn-primary m-5 mr-5 float-right" onclick="genarate()">Hide</button> 		
         <!-- <button class="btn btn-primary m-5 mr-5 float-right" onclick="genarate()">Hide</button>  -->
        <table class="table table-striped">
            <thead>
@@ -45,6 +46,10 @@
              });
              
              document.getElementById("table").innerHTML=tbody 
+			   document.getElementById("table").classList.toggle("d-none")
+           }
+		     http.onerror=function(){
+               alert("Lodding error")
            }
          
        }
