@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container w-75">
+        <button class="btn btn-primary m-5 ml-5 " onclick="genarate()">Ganerate</button> 
+        <!-- <button class="btn btn-primary m-5 mr-5 float-right" onclick="genarate()">Hide</button>  -->
+       <table class="table table-striped">
+           <thead>
+               <tr class="bg-warning">
+                   <th>S.N0</th>
+                   <th>NAME</th>
+                <th>USEAR NAME</th>
+                   <th>EMAIL</th>
+                   <th>STREET</th>
+                   <th>CITY</th>
+                   <th>PHONE</th>
+                   <th>WEBSITE</th>
+               </tr>
+           </thead>
+           <tbody id="table">
+
+           </tbody>
+       </table>
+
+   </div> 
+   <script>
+       function genarate(){
+           var http=new XMLHttpRequest();
+           http.open("GET","https:\\jsonplaceholder.typicode.com/users");
+           http.send();
+           http.responseType="json";
+           http.onload=function(){
+               var xyz=http.response;
+               console.log(xyz)
+               var tbody="";
+             xyz.forEach(function(val,ind){
+               
+                tbody+="<tr><td>"+val.id+"</td><td>"+val.name+"</td><td>"+val.username+"</td><td>"+val.email+"</td><td>"+val.address.street+"</td><td>"+val.address.city+"</td><td>"+val.phone+"</td><td>"+val.website+"</td></tr>"
+             });
+             
+             document.getElementById("table").innerHTML=tbody 
+           }
+         
+       }
+   </script> 
+</body>
+</html>

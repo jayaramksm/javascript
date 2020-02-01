@@ -1,0 +1,88 @@
+<html lang="en">
+<head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <div class="container w-75">
+       <button class="btn btn-primary m-5 ml-5 " onclick="genarate()">Ganerate</button>
+       <button class="btn btn-primary m-5 mr-5 float-right" onclick="genarate()">Hide</button>
+       <table class="table table-striped">
+           <thead>
+               <tr class="bg-warning">
+                   <th>S.N0</th>
+                  
+                   <th>S.LNAME</th>
+                   <th>AGE</th>
+                   <th>MAIL</th>
+                   <th>CITY</th>
+                   <th>PINCODE</th>
+                   <th>STATE</th>
+               </tr>
+           </thead>
+           <tbody id="table">
+
+           </tbody>
+       </table>
+
+   </div> 
+   <script>
+       var person=function(sno,fname,lname,age,mail,city,pincode,state){
+           this.sno=sno;
+           this.fname=fname;
+           this.lname=lname;
+           this.age=age;
+           this.mail=mail;
+           this.city=city;
+           this.pincode=pincode;
+           this.state=state;
+           this.getname=function(){
+               console.log(this.fname+" "+this.lname)
+           };
+           var getemail=function(mail){
+               var a=02
+               console.log(a+mail)
+           }
+           this.adress=function(village,mdl,dts,Hno){
+            console.log(village+" "+mdl+" "+dts+" "+Hno);
+            getemail()
+           };
+         
+    }
+      var std1=new person(101,"<a href='dynamic table and card-hader.html'>","kasim",22,"jayramksm@gmail.com","Amalapuram",533221,"AP");
+      std1.adress("mokkalathippa","karenikona","East godavari", "6-29");
+      var std2=new person(102,"<a href='fibonacci.html'>","ram",21,"hello@gmail.com","pallamkurru",533251,"AP");
+      var std3=new person(103,"<a href='filter.html'>","jaya",23,"hiiiiii@gmail.com","katrenikona",533251,"AP");
+      var std4=new person(104,"<a href='hide and show.html'>","manju",24,"manjunadh@gmail.com","mumidivaram",533251,"AP");
+      var std5=new person(105,"<a href='inheritance js.html'>","kondeti",25,"rajesh@gmail.com","amalapuram",533221,"AP");
+      var std6=new person(106,"<a href='map.html'>","saladi",26,"adhinarayana@gmail.com","uppudi",533212,"AP");  
+      var std7=new person(107,"<a href='primnumber.html'>","sadanala",23,"geethapadmapriya@gmail.com","hyderabad",533001,"TS");
+      var std8=new person(108,"<a href='validetion.html'>","kolapalli",28,"siva@gmail.com","veravellipalem",533231,"AP");
+      var std9=new person(109,"<a href='call and apply methodas.html'>","nakka",23,"charan@gmail.com","yanam",533251,"TS");
+      var std10=new person(10,"<a href='abstraction electracity bill.html'>","kottipali",24,"sairaju@gmail.com","vella",533251,"AP");
+      
+
+      var students=[std1,std2,std3,std4,std5,std6,std7,std8,std9,std10];
+
+      function genarate(){
+        var tbody="";
+          students.forEach(function(val,ind){
+             tbody+="<tr><td>"+val.fname+val.sno+"</a>"+"</td><td>"+val.lname+"</td><td>"+val.age+"</td><td>"+val.mail+"</td><td>"+val.city+"</td><td>"+val.pincode+"</td><td>"+val.state+"</td></tr>";
+            //   tbody+="<tr><td onclick='page()'>"+val.sno+"</td><td>"+val.fname+"</td><td>"+val.lname+"</td><td>"+val.age+"</td><td>"+val.mail+"</td><td>"+val.city+"</td><td>"+val.pincode+"</td><td>"+val.state+"</td></tr>";
+        
+          })
+
+          document.getElementById("table").innerHTML=tbody
+          document.getElementById("table").classList.toggle("d-none")
+      }
+      function page(){
+        open("dynamic table and card-hader.html")
+      }
+
+   </script>
+
+</body>
+</html>

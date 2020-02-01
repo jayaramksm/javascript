@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="xyz" value="">
+    <button onclick="abc()">click me</button>
+    <script>
+
+        function abc(){
+       var abc =document.getElementById("xyz").value
+       var temp=0
+       var n=abc
+     while(n!=0){
+       
+        var rem=n%10
+        temp=temp*10+rem;
+        n=parseInt(n/10)
+     }
+     n=abc
+     if(n==temp){
+         alert("is a palindrome number ")
+     }else{
+         alert("is not a palindrome number")
+     }
+    
+   
+        }
+    </script>
+</body>
+</html>

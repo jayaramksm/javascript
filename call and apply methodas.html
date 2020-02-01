@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var student ={
+        fname:"jayaram",
+        lname:"kasim",
+        age:22,
+        getinfo:function(city,state,pnum){
+            console.log(this.fname+" "+this.lname+" "+city+" "+state+" "+pnum)
+        }
+    }
+        student.getinfo("Amalapuram","AP",9640645520)
+
+        // call methode
+
+        student.getinfo.call(student,"Amalapuram","AP",9640645520)
+
+        // apply methode
+
+        student.getinfo.apply(student,["Amalapuram","AP",9640645520])
+
+</script>
+</body>
+</html>
