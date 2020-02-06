@@ -1,0 +1,173 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid m-0 p-0">
+        <div class="d-flex justify-content-between bg-warning">
+            <img class="" src="https://media1.picsearch.com/is?bnaXALSfV9ULQtHEIKcSey3ebAmbS8StRGSqsoQYPic&height=194" style="width:100px ;" alt="">
+       <h1>BOARD OF CONTROL FOR CRICKET IN INDIA</h1>
+            <button class="btn btn-primary m-2" style="height: 50px;" onclick="close()" >Log out</button>
+
+        </div>
+        <div class="d-flex m-0 p-3 bg-info justify-content-around ">
+            <a class="text-white" href="https://www.bcci.tv/">Home</a>
+            <a class="text-white" href="https://www.bcci.tv/international/results">Results</a>
+            <a class="text-white" href="https://www.bcci.tv/about">About</a>
+            <a class="text-white" href="https://www.bcci.tv/players/men">Players</a>
+            <a class="text-white" href="https://www.bcci.tv/videos/highlights">Videos</a>
+            <a class="text-white" href="https://www.bcci.tv/articles">News</a>
+    </div>
+    <div class="container bg-danger p-3 ">
+        <h2 class="text-center text-white mb-5 mt-3">JOIN  CRICKET TEAM FILL THIS</h2>
+       <div class="row">
+           <div class="col-md-4 pl-5"><h3>Enter your id</h3>
+        <input type="text" name="id" id="id" placeholder="Enter your id">
+        </div>
+        <div class="col-md-4 pl-5"><h3>Enter your user name</h3>
+            <input type="text" name="name" id="name" placeholder="Enter your user name">
+            </div>
+            <div class="col-md-4 pl-5"><h3>Enter your password</h3>
+                <input type="password" name="password" id="password" placeholder="Enter your password">
+                </div>
+       </div>
+       <div class="row mt-5">
+        <div class="col-md-4 pl-5"><h3>Enter your email</h3>
+            <input type="text" name="email" id="email" placeholder="Enter your email">
+            </div>
+            <div class="col-md-4 pl-5"><h3>Enter your number</h3>
+                <input type="number" name="number" id="number" placeholder="Enter your number">
+                </div>
+                <div class="col-md-4 pl-5"><h3>Enter your cuntry</h3>
+                  <select id="cuntry">
+                      <option  value="">Ind</option>
+                      <option  value="">Aus</option>
+                      <option name="option" value="">Nz</option>
+                      <option name="option" value="">End</option>
+                      <option name="option" value="">Us</option>
+                  </select>
+       </div>
+    </div>
+
+       <div class="row mt-5">
+       
+           <div class="col-md-4 pl-5"><h3>Enter your street 1</h3>
+        <input type="text" name="street1" id="street1" placeholder="Enter your street 1">
+        </div>
+        <div class="col-md-4 pl-5"><h3>Enter your user  street 2</h3>
+            <input type="text" name="street2" id="street2" placeholder="Enter your user street 2">
+            </div>
+            <div class="col-md-4 pl-5"><h3>Enter your state</h3>
+                <input type="text" name="state" id="state" placeholder="Enter your state">
+                </div>
+       </div>
+       <div class="row mt-5">
+           <span class="col-md-1"></span>
+           <button class="btn btn-primary  col-md-4" onclick="submit()">Sumit</button>
+           <span class="col-md-1"></span>
+           <button class="btn btn-primary  col-md-4" onclick="cancel()">Cancel</button>
+           <span class="col-md-1"></span>
+       </div>
+    </div>
+    </div>
+
+
+    <div class="container w-75">
+        <button class="btn btn-primary m-5 ml-5 " onclick="genarate()">Ganerate</button> 
+        <button class="btn btn-primary m-5 mr-5 float-right" onclick="genarate()">Hide</button>  
+       <table class="table table-striped table-hover">
+           <thead>
+               <tr class="bg-warning">
+                   <th>S.N0</th>
+                   <th>NAME</th>
+                <th>USEAR NAME</th>
+                   <th>EMAIL</th>
+                   <th>STREET</th>
+                   <th>CITY</th>
+                   <th>PHONE</th>
+                   <th>WEBSITE</th>
+               </tr>
+           </thead>
+           <tbody id="table">
+
+           </tbody>
+       </table>
+
+   </div> 
+  
+    <script>
+        function cancel(){
+            document.getElementById("id").value="";
+            document.getElementById("name").value="";
+            document.getElementById("password").value="";
+            document.getElementById("number").value="";
+            document.getElementById("state").value="";
+            document.getElementById("cuntry").value="";
+            document.getElementById("street1").value="";
+            document.getElementById("street2").value="";
+            document.getElementById("email").value="";
+        
+           
+        };
+        function submit(){
+         var id = document.getElementById("id").value; 
+         var name =  document.getElementById("name").value;
+         var password  = document.getElementById("password").value;
+         var number = document.getElementById("number").value;
+         var state = document.getElementById("state").value;
+         var cuntry = document.getElementById("cuntry").value;
+         var street1 = document.getElementById("street1").value;
+         var street2 =  document.getElementById("street2").value;
+         var email = document.getElementById("email").value;
+           if(id == ""  ||name == "" || password == "" || number == "" || state == ""  || street1 == "" || street2 == "" || email == ""){
+            alert("Full fill the all the input")
+           }
+           else{
+               open("https://www.bcci.tv/videos/145390/team-india-relish-the-5-0-series-sweep")
+           }
+           var jay="jaya"
+           var jaya="jay"
+         var obj={
+             id:id,
+             name:name,
+             password:password,
+             number:number,
+             state:state,
+             cuntry:cuntry,
+             street1:street1,
+             street2:street2,
+             email:email
+         }
+        
+         console.log(obj.id+""+obj.name+obj.password+obj.number+obj.state+obj.cuntry+obj.street1+obj.street2)
+        var http=new XMLHttpRequest();
+        http.open("post","https:\\jsonplaceholder.typicode.com/users",true,jay,jaya)
+        http.responseType="json"
+        http.send(obj);
+        http.onload=function(){
+            var res=http.response;
+            alert(res);
+            console.log(res)
+        }
+        http.onerror=function(){
+               alert("Lodding error")
+           }
+      
+        }
+        function close(){
+            close();
+        }
+
+
+        
+         
+       
+     
+    </script>
+     
+</body> 
+</html>
