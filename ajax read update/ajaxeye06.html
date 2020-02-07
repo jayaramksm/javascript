@@ -1,0 +1,37 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container w-75" >
+        <div class="card  m-5" id="table">
+
+        </div>
+       
+   </div> 
+  
+
+   <script>
+        var url=location.search;
+        var ind=url.split("=")
+        var index=ind[ind.length-1]
+           var http=new XMLHttpRequest();
+           http.open("GET","https:\\jsonplaceholder.typicode.com/users/"+index);
+        //    http.open("GET","https:\\jsonplaceholder.typicode.com/users")
+           http.send();
+         http.responseType="json";
+         var card=""
+           http.onload=function(){
+               var val=http.response;
+               console.log(val)
+              
+         
+              card+="<div class='card' ><div class='card-header text-center'>"+val.id+"</div><div class='text-center card-body'>"+ "<div class='row mt-2'><div class='col-md-6'>"+val.name+"</div>"+ "<div class='col-md-6'>"+val.username+"</div></div>"+  "<div class='row mt-2'><div class='col-md-6'>"+val.phone+"</div>"+ "<div class='col-md-6'>"+val.email+"</div></div>"+  "<div class='row mt-2'><div class='col-md-6'>"+val.address.street+"</div>"+ "<div class='col-md-6'>"+val.address.city+"</div></div>"+"</div><div class='card-footer text-center'>"+val.website+"</div></div>"
+            //   card+="<div class='card' ><div class='card-header'>"+val[index-1].id+"</div><div class='card-body'>"+val[index-1].name+"</div><div class='card-footer'>"+val[index-1].email+"</div></div>"
+           document.getElementById("table").innerHTML=card
+           }
+</script>
+</body>

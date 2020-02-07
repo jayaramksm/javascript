@@ -1,0 +1,175 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid m-0 p-0">
+        <div class="d-flex justify-content-between bg-warning">
+            <img class="" src="https://media1.picsearch.com/is?bnaXALSfV9ULQtHEIKcSey3ebAmbS8StRGSqsoQYPic&height=194" style="width:100px ;" alt="">
+       <h1>BOARD OF CONTROL FOR CRICKET IN INDIA</h1>
+            <button class="btn btn-primary m-2" style="height: 50px;" onclick="close()" >Log out</button>
+
+        </div>
+        <div class="d-flex m-0 p-3 bg-info justify-content-around ">
+            <a class="text-white" href="https://www.bcci.tv/">Home</a>
+            <a class="text-white" href="https://www.bcci.tv/international/results">Results</a>
+            <a class="text-white" href="https://www.bcci.tv/about">About</a>
+            <a class="text-white" href="https://www.bcci.tv/players/men">Players</a>
+            <a class="text-white" href="https://www.bcci.tv/videos/highlights">Videos</a>
+            <a class="text-white" href="https://www.bcci.tv/articles">News</a>
+    </div>
+    <div class="container bg-danger p-3 ">
+        <h2 class="text-center text-white mb-5 mt-3">JOIN  CRICKET TEAM FILL THIS</h2>
+       <div class="row">
+           <div class="col-md-6 pl-5 "><h3>Enter your id</h3>
+        <input class=" form-control " type="text" name="id" id="id" readonly placeholder="Enter your id">
+        </div>
+        <div class="col-md-6 pl-5"><h3>Enter your user name</h3>
+            <input class=" form-control " type="text" name="name" id="name" placeholder="Enter your user name">
+            </div>
+           
+       </div>
+       <div class="row mt-5">
+        <div class="col-md-6 pl-5"><h3>Enter your name</h3>
+            <input class=" form-control " type="text" name="password" id="password" placeholder="Enter your name">
+            </div>
+        <div class="col-md-6 pl-5"><h3>Enter your email</h3>
+            <input class=" form-control " type="text" name="email" id="email" placeholder="Enter your email">
+            </div>
+           
+    </div>
+
+       <div class="row mt-5">
+        <div class="col-md-6 pl-5"><h3>Enter your number</h3>
+            <input class=" form-control " type="text" name="number" id="number" placeholder="Enter your number">
+            </div>
+          
+       
+           <div class="col-md-6 pl-5"><h3>Enter your street 1</h3>
+        <input class=" form-control " type="text" name="street1" id="street1" placeholder="Enter your street 1">
+        </div>
+       </div>
+
+        <div class="row mt-5">
+            <div class="col-md-6 pl-5"><h3>Enter your city</h3>
+                <input class=" form-control " type="text" name="state" id="state" placeholder="Enter your state">
+                </div>
+                <div  class="col-md-6 pl-5"><h3>Enter your website</h3>
+                    <input class=" form-control "  type="text" name="state" id="website" placeholder="Enter your website">
+                    </div>
+       </div>
+       
+    </div>
+    </div>
+    
+    <div class="container w-75">
+        <button class="btn btn-primary m-5 ml-5 " onclick="update()">UPDATE</button> 
+        <button class="btn btn-primary m-5 mr-5 float-right" onclick="cancel()">CANCEL</button>  
+
+   
+  
+    <script>
+        var url=location.search;
+        var ind=url.split("=")
+        var index=ind[ind.length-1]
+           var http=new XMLHttpRequest();
+           http.open("GET","https:\\jsonplaceholder.typicode.com/users/"+index);
+        //    http.open("GET","https:\\jsonplaceholder.typicode.com/users")
+           http.send();
+         http.responseType="json";
+         var card=""
+           http.onload=function(){
+               var val=http.response;
+               console.log(val)
+              
+      var id =   document.getElementById("id").value=val.id; 
+          document.getElementById("name").value=val.name;
+         document.getElementById("password").value=val.username;
+         document.getElementById("email").value=val.email;
+
+          document.getElementById("number").value=val.phone;
+          document.getElementById("street1").value=val.address.street;
+          document.getElementById("state").value=val.address.city;
+        
+           document.getElementById("website").value=val.website;
+        
+           }
+
+
+
+           function update(){
+            var id = document.getElementById("id").value
+         var name =  document.getElementById("name").value
+         var password  = document.getElementById("password").value;
+         var email = document.getElementById("email").value;
+
+         var number = document.getElementById("number").value;
+         var street1 = document.getElementById("street1").value;
+         var state = document.getElementById("state").value;
+        
+         var website =  document.getElementById("website").value;
+        
+         var obj={
+            id:id,
+            name:name,
+            username:password,
+            email:email,
+            phone:number,
+           street:street1,
+           city:state,
+           website:website
+
+            }
+            console.log(obj.id+obj.phone+obj.website)
+
+            if(id == ""  ||name == "" || password == "" || number == ""   || street1 == "" || website == "" || email == ""){
+            alert("Full fill the all the input")
+           }
+       else{
+            //    open("https://www.bcci.tv/videos/145390/team-india-relish-the-5-0-series-sweep")
+           }
+           var post=new XMLHttpRequest();
+           post.open("POST","https://jsonplaceholder.typicode.com/users");
+           post.responseType="json";
+           post.send(obj);
+           post.onload=function(){
+               var pres=post.response;
+               console.log(pres )
+           }
+           }
+        
+        http.onerror=function(){
+               alert("Lodding error")
+           }
+      
+        
+        function close(){
+            close();
+        }
+
+
+        function cancel(){
+                 document.getElementById("id").value=""
+                 document.getElementById("name").value=""
+                 document.getElementById("password").value=""
+                 document.getElementById("email").value=""
+                 document.getElementById("number").value=""
+                 document.getElementById("street1").value=""
+                 document.getElementById("state").value=""
+                 document.getElementById("website").value=""
+    
+    
+        
+           close();
+        };
+         
+       
+     
+    </script>
+     
+</body> 
+</html>
