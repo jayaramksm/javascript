@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div class="container-fluid m-0 p-0">
+    <div class="d-flex justify-content-between bg-warning">
+        <img class="" src="https://media1.picsearch.com/is?bnaXALSfV9ULQtHEIKcSey3ebAmbS8StRGSqsoQYPic&height=194" style="width:100px ;" alt="">
+   <h1>BOARD OF CONTROL FOR CRICKET IN INDIA</h1>
+        <button class="btn btn-primary m-2" style="height: 50px;" onclick="close()" >Log out</button>
+
+    </div>
+    <div class="d-flex m-0 p-3 bg-info justify-content-around ">
+        <a class="text-white" href="ajaxreadupdate-inline10.html">Home</a>
+        <a class="text-white" href="ajaxpost10.html">POST</a>
+        <a class="text-white" href="ajaxcommonts10.html">COMMONTS</a>
+        <a class="text-white" href="ajaxuser10.html">USRES</a>
+       
+</div>
+</div>
+<div class="container" id="card"></div>
+<script>
+     var res;
+      var http=new XMLHttpRequest();
+      http.open("GET","https:\\jsonplaceholder.typicode.com/posts")
+    
+      http.send();
+      http.responseType="json";
+      http.onload=function(){
+          res=http.response;
+          console.log(res)
+          var card="";
+          res.forEach(function(val,ind){
+            card+="<div class='card mt-3'><div class='card-header bg-secondary text-center'>"+val.id+
+            "</div><div class='card-title bg-danger text-center'>"+val.title+
+                "</div><div class='card-body bg-warning text-center'>"+val.body+"</div></div>"
+          })
+          document.getElementById("card").innerHTML=card
+      }
+</script>
+</body>
+</html>

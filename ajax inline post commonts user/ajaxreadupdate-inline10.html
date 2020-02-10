@@ -1,0 +1,116 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div class="container-fluid m-0 p-0">
+    <div class="d-flex justify-content-between bg-warning">
+        <img class="" src="https://media1.picsearch.com/is?bnaXALSfV9ULQtHEIKcSey3ebAmbS8StRGSqsoQYPic&height=194" style="width:100px ;" alt="">
+   <h1>BOARD OF CONTROL FOR CRICKET IN INDIA</h1>
+        <button class="btn btn-primary m-2" style="height: 50px;" onclick="close()" >Log out</button>
+
+    </div>
+    <div class="d-flex m-0 p-3 bg-info justify-content-around ">
+        <a class="text-white" href="ajaxreadupdate-inline10.html">Home</a>
+        <a class="text-white" href="ajaxpost10.html">POST</a>
+        <a class="text-white" href="ajaxcommonts10.html">COMMONTS</a>
+        <a class="text-white" href="ajaxuser10.html">USERS</a>
+       
+</div>
+  <div class="container">
+      <table class="table ">
+          <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>NAME</th>
+                  <th>EMAIL</th>
+                  <th>PHONE</th>
+                  <th>ACTION</th>
+              </tr>
+          </thead>
+          <tbody id="table">
+              
+          </tbody>
+      </table>
+  </div>
+  <script>
+      var res;
+      var http=new XMLHttpRequest();
+      http.open("GET","https:\\jsonplaceholder.typicode.com/users")
+    
+      http.send();
+      http.responseType="json";
+      http.onload=function(){
+          res=http.response;
+        //   console.log(res)
+          var table="";
+          res.forEach(function(val,ind) {
+     table+="<tr><td>"+'<input class="border-0" type="text" name=""  readonly id="'+val.id+'" value='+val.id+'>'+"</td><td>"
+     +'<input class="border-0" type="text" name="" id="'+val.name+'" readonly value='+val.name+'>'
+     +"</td><td>"+'<input class="border-0" type="text" name="" id="'+val.email+'" readonly value='+val.email+'>'
+     +"</td><td>"+'<input class="border-0" type="text" name=""id="'+val.phone+'"readonly value='+val.phone+'>'
+      +"</td><td id='"+val.username+"'>"+"<i class='fa fa-pencil-square' onclick='read("+val.id+")'></i>"+"</td></tr>"
+          });
+          document.getElementById("table").innerHTML=table
+      }
+      http.onerror=function(){
+          alert("loadding error")
+      }
+      function read(jay){
+        //   console.log(jay)
+        //   console.log(res[0])
+    //  document.getElementById("id").classList.remove("border-0")
+      document.getElementById(res[jay-1].id).classList.remove("border-0")
+      document.getElementById(res[jay-1].name).classList.remove("border-0")
+      document.getElementById(res[jay-1].email).classList.remove("border-0")
+      document.getElementById(res[jay-1].phone).classList.remove("border-0")
+      document.getElementById(res[jay-1].id).removeAttribute("readonly")
+      document.getElementById(res[jay-1].name).removeAttribute("readonly")
+      document.getElementById(res[jay-1].email).removeAttribute("readonly")
+      document.getElementById(res[jay-1].phone).removeAttribute("readonly")
+      document.getElementById(res[jay-1].username).innerHTML="<button class='btn btn-primary mr-2'  onclick='submit("+jay+")'>submit</button><button class='btn btn-primary pr-2'  onclick='cancel("+jay+")'>cancel</button>"
+    // document.getElementById(jayj).innerHTML="jayaram"
+      }
+      function submit(ram){
+          
+        var id =  document.getElementById(res[ram-1].id).value
+     var name =  document.getElementById(res[ram-1].name).value
+   var email =   document.getElementById(res[ram-1].email).value
+   var phone =   document.getElementById(res[ram-1].phone).value
+   var obj={
+       id:id,
+       name:name,
+       email:email,
+       phone:phone
+   }
+//    console.log(obj)
+   var htt=new XMLHttpRequest();
+   htt.open("POST","https:\\jsonplaceholder.typicode.com/users");
+   htt.responseType="json";
+   htt.send(obj);
+   htt.onload=function(){
+       var pos=htt.response;
+       console.log(pos)
+   }
+  
+      }
+      function cancel(cal){
+        document.getElementById(res[cal-1].username).innerHTML="<i class='fa fa-pencil-square' onclick='read("+cal+")'></i>"
+        document.getElementById(res[cal-1].id).classList.add("border-0")
+      document.getElementById(res[cal-1].name).classList.add("border-0")
+      document.getElementById(res[cal-1].email).classList.add("border-0")
+      document.getElementById(res[cal-1].phone).classList.add("border-0")
+      document.getElementById(res[cal-1].id).setAttribute("readonly")
+      document.getElementById(res[cal-1].name).setAttribute("readonly")
+      document.getElementById(res[cal-1].email).setAttribute("readonly")
+      document.getElementById(res[cal-1].phone).setAttribute("readonly")
+    
+      }
+  </script> 
+ 
+</body>
+</html>
