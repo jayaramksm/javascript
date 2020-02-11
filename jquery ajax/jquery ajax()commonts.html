@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <title>comments</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <div id="card"></div>
+    <!-- <button>click me</button> -->
+   
+    <script> 
+    // var table=""
+    var card=""
+        $(document).ready(function() { 
+            // $("button").click(function() { 
+                $.ajax({
+                    "methode":"GET",
+                    url: "https:\\jsonplaceholder.typicode.com/comments",  
+                        success: function(res) {
+                            // alert(res) 
+                            res.forEach(function(val,ind){
+            card+="<div class='card mt-3'><div class='card-header bg-secondary text-center'>"+val.id+
+            "</div><div class='card-title bg-danger text-center'>"+val.name+
+                "</div><div class='card-body bg-warning text-center'>"+val.body+"</div>"+
+                "</div><div class='card-body bg-warning text-center'>"+val.email+"</div></div>"
+          })
+          document.getElementById("card").innerHTML=card
+      },
+                          
+                   "error":function(err){
+                alert("error")
+            }
+                   }); 
+            }); 
+        // }); 
+    </script> 
+   
+</body>
+</html> 
