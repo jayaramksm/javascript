@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card" id="card" onclick="">
+      </div>
+        </div>
+        
+        <script>
+              var card = "";
+              var res;
+            
+            // var http = new XMLHttpRequest();
+            // http.open("GET","https:\\jsonplaceholder.typicode.com/users")
+            // http.responseType="json";
+            // http.send();
+            // http.onload = function(){
+            //     res = http.response;
+            // 
+            //     var card = "";
+            $.ajax({
+                type:"GET",
+                url:"https:\\jsonplaceholder.typicode.com/users",
+                success:function(res){
+
+           
+                res.forEach(function(val,ind){
+                    card+=' <div class="card-header mt-4 bg-warning text-center text-white" id="'+val.name+'" onclick="ram('+val.id+')">'
+                    +val.id+
+     '</div> <div id="'+val.id+'" class="card-body   "><div class="text-center">'+val.name
+      +'</div>  <div class="text-center">'+val.username +'</div>' +'  <div class="text-center">'+val.phone +'</div>'
+       +'  <div class="text-center">'+val.address.city +'</div>' +'  <div class="text-center">'+val.email 
+      +'</div></div>'
+                })
+                document.getElementById("card").innerHTML=card
+            //     alert(res[0].name)
+            // $("#"+res[0].name+" ").bind("click",function(){
+            //     alert("hii")
+                // $("#res[0].id").toggle("d-none")
+            // })
+            },
+            error:function(err){
+                alert("error")
+            }
+            
+            });
+
+            function ram(a){ 
+              
+                document.getElementById(a).classList.toggle("d-none")
+
+            }
+
+
+ 
+            // $("#res[0].name").bind("click",function(){
+            //     $("#res[0].id").toggle("d-none")
+            // })
+          
+        </script>
+</body>
+</html>
