@@ -1,0 +1,23 @@
+
+
+  .text{
+    font-weight: bold;
+    font-family: italic;
+    font-size: xx-large;
+    text-shadow:thistle 2px 2px;
+}
+.topper{
+    color: green;
+    font-family: italic;
+}
+.fail{
+    color: red;
+    font-family: italic;
+}
+.good{
+    color: black;
+    font-family: italic;
+}
+.tabel{
+    font-family: italic;
+}
