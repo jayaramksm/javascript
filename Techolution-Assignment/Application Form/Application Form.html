@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <link rel="stylesheet" href="Application Form.html.css" >
+   
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
+</head>
+<body>
+   <div class="container" id="main">
+       <div class="card">
+           <div class="card-header text text-center">
+            Application Form
+           </div>
+           <div class="card-body">
+               <form class="form-group">
+                   <label class="inputname" for="">Enter Your First Name</label>
+                   <input class="form-control" type="text" onkeyup="fnametext()" name="" id="firstname" autofocus maxlength="20" placeholder="Enter Your First Name">
+                   <label for="" class="d-none text-danger inputname" id="errormsg">Enter only string</label>
+               </form>
+               <form class="form-group">
+                <label class="inputname" for="">Enter Your Last Name</label>
+                <input class="form-control" type="text" name="" id="lastname" onkeyup="lnametext()"  maxlength="20" placeholder="Enter Your Last Name">
+                <label for="" class="d-none text-danger inputname" id="seconderrormsg">Enter only string</label>
+            </form>
+            <form class="form-group">
+                <label class="inputname" for="">Class</label>
+                <input class="form-control" type="text" name="" id="Class" placeholder="Enter class">
+            </form>
+            <form class="form-group">
+                <label class="inputname" for="">Year of passing</label>
+                <input class="form-control" type="number" onkeyup="yearofpass()" name="" id="passing" placeholder="Enter Year of passing">
+                <label for="" class="d-none text-danger inputname" id="yearerrormsg">Any year after 2017 should be invalid</label>
+            </form>
+            <form class="form-group">
+                <label class="inputname" for="">Percentage of marks</label>
+                <input class="form-control" type="number" name="" id="Percentage" placeholder="Enter Percentage of marks">
+                <label for="" class="d-none text-danger inputname" id="finalerror">Please enter valid input</label>
+            </form>
+          
+           </div>
+           <div class="card-footer text-right">
+            <button class="btn btn-primary inputname text-white" id="submit" onclick="getsubmit()">Submit</button>
+            <button class="btn btn-primary inputname text-white" onclick="getclear()">Clear</button>
+           </div>
+       </div>
+   </div>
+
+
+</body>
+<script  src="Application Form.html.js"></script>
+</html>
